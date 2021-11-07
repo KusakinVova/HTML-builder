@@ -17,10 +17,19 @@ console.log('IF you finish pleace write \'exit\' or click Ctrl+C ');
 console.log('-------------------------------');
 
 rl.on('line', function (line) {
-  if (line.toLowerCase().trim() === 'exit') rl.close();
+  if (line.toLowerCase().trim() === 'exit'){
+    rl.close();
+  }
   else {
     writeableStream.write(`${line}\n`);
     rl.prompt();
   }
 });
 rl.prompt();
+
+rl.on('close', () => {
+  rl.close();
+  console.log('\n\r-------------------------------');
+  console.log('Good bye!');
+  process.exit(0);
+});
