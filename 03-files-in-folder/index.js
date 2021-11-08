@@ -9,7 +9,7 @@ function readDir(dir){
     files.forEach(file => {
       let file_path = path.join(dir,file.name);
       if(file.isDirectory()){
-        readDir(file_path);
+        //readDir(file_path);
       }
       else{
         fs.stat(file_path, (err, stat) => {
@@ -20,7 +20,6 @@ function readDir(dir){
           filesize = filesize < (10**3) ? `${filesize}b` : filesize > (10**6) ? `${filesize / (10**6) }mb` : `${filesize / (10**3) }kb`;
           console.log(`${name} - ${ext} - ${filesize} `);
         });
-        
       }
     });
   });
