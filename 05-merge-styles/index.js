@@ -2,9 +2,8 @@ const fsPromises = require('fs').promises;
 const path = require('path');
 
 // ------------------------------------------
-const dirstyle = path.join(__dirname, '/styles');
-const bundle = 'project-dist/bundle.css';
-const bundle_path = path.join(__dirname, bundle);
+const dirstyle = path.join(__dirname, 'styles');
+const bundle_path = path.join(__dirname, 'project-dist', 'bundle.css');
 // ------------------------------------------
 
 async function createBundle(file, dirstyle){
