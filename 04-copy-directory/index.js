@@ -20,3 +20,4 @@ async function copyDir(src,dest) {
 }
 
 copyDir(src,dest);
+console.log(`I copied dir 'files' to dir 'files-copy'`);
