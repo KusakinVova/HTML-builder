@@ -13,6 +13,7 @@ async function createBundle(file, dirstyle){
       await fsPromises.appendFile(file, data);
     }
   }
+  console.log(`I created bundle ${file}`);
 }
 
 async function copyDir(src,dest) {
@@ -28,6 +29,7 @@ async function copyDir(src,dest) {
       await fsPromises.copyFile(srcPath, destPath);
     }
   }
+  console.log(`I copied ${src}`);
 }
 
 async function buildLayout(nameLayout, sourceTemplate, sourceComponents){
@@ -42,6 +44,7 @@ async function buildLayout(nameLayout, sourceTemplate, sourceComponents){
     }
   }
   await fsPromises.writeFile(nameLayout, template);
+  console.log(`I created layout ${nameLayout}`);
 }
 
 
@@ -62,6 +65,7 @@ async function buildProject(dirProject, nameLayout, nameStyle, nameAssetsDir){
   await createBundle(nameStyle, dirStylesSource);
   await copyDir(dirAssetsSource,nameAssetsDir);
 
+  console.log(`\nI created Project ${dirProject}`);
 }
 
 buildProject();
