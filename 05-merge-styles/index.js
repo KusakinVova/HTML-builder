@@ -16,6 +16,7 @@ async function createBundle(file, dirstyle){
       await fsPromises.appendFile(file, data);
     }
   }
+  console.log(`I created ${file}`);
 }
 
 createBundle(bundle_path, dirstyle);
